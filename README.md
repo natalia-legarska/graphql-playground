@@ -1,19 +1,19 @@
-# graphql-playground - 
+# graphql-playground
 
 ## Checklist
-- [ ] Create repo
-- [ ] ...
+- [x] Create repo
+- [ ] Crete frontend project
+- [ ] Create backend project
 
 ## Task
-Unless specified otherwise choose the libraries as you see fit. Provide
-the solution as separate projects, not a single full-stack app (this can be
+Unless specified otherwise choose the libraries as you see fit. 
+Provide the solution as separate projects, not a single full-stack app (this can be
 a monorepo if you prefer). High testing coverage is strongly recommended.
 
 We have to be able to run the projects (along with tests), so provide any
 necessary information in the README.
 
 Please implement the following using **TypeScript**:
-
 ### Back-end
 Create a simple back-end that stitches two public GraphQL APIs of your choice.
 Some of the operations must require authentication.
