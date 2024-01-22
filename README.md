@@ -6,10 +6,6 @@
   - Create a simple back-end that stitches two public GraphQL APIs of your choice.
   - Some of the operations must require authentication
     - every authenticated operation must be saved in an access log that has to be exposed as a separate authenticated query.
-- [ ] Crete frontend project
-  - Use React and Apollo Client
-  - Implement a single page that will display the information from at least two separate queries defined in the back-end.
-  - One of the queries should require authentication and the app should allow logging in and out (but the credentials can be hardcoded).
 - [ ] Documentation how to run
 - [ ] Testing coverage
 
