@@ -1,4 +1,4 @@
-- [ ] create backend project in Node.js
+- [x] create backend project in Node.js
 	- [ ] setup GraphQL
 	- [ ] setup testing environment
 - [ ] select public GraphQL API

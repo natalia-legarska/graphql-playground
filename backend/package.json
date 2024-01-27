@@ -13,5 +13,9 @@
     "apollo-server": "3.13.0",
     "graphql": "15.8.0",
     "type-graphql": "1.1.1"
+  },
+  "devDependencies": {
+    "ts-node": "10.9.2",
+    "typescript": "5.3.3"
   }
 }
