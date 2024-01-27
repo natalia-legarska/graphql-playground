@@ -1,6 +1,6 @@
 - [x] create backend project in Node.js
-	- [ ] setup GraphQL
-	- [ ] setup testing environment
+	- [x] setup GraphQL
+	- [x] setup testing environment
 - [ ] select public GraphQL API
 - [ ] implement GraphQL server
 	- [ ] create schema
