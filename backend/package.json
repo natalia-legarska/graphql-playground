@@ -4,9 +4,14 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "start": "",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "ts-node index.ts",
+    "test": "jest"
   },
   "author": "Natalia Legarska",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "3.13.0",
+    "graphql": "15.8.0",
+    "type-graphql": "1.1.1"
+  }
 }
