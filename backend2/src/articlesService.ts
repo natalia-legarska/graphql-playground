@@ -1,7 +1,7 @@
 import {Article, ArticleResponse} from "./models";
 
 export interface ArticlesService {
-    articleById(id: string): Promise<any>;
+    articleById(id: string): Promise<Article>;
 }
 
 export class DataCiteService implements ArticlesService {
