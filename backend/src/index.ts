@@ -1,60 +1,33 @@
 import {ApolloServer} from '@apollo/server';
 import {startStandaloneServer} from "@apollo/server/standalone";
+import {resolvers} from "./resolvers/resolvers";
+import {ArticlesDataSource} from "./datasources/articles";
+import {typeDefs} from "./schema";
 
-const articlesDataSet = await import("./data/emoji-articles-export.json", {
-    assert: {type: 'json'}
-});
-
-// A sample schema
-const typeDefs = `#graphql    
-type Person{
-    family: String
-    given: String
+interface ContextValue {
+    dataSources: {
+        articleDS: ArticlesDataSource;
+    };
 }
-
-type Article {
-    DOI: String
-    ISSN: String
-    URL: String
-    abstract: String
-    accessed: String
-    author: [Person]
-    citationKey: String
-    containerTitle: String
-    containerTitleShort: String
-    editor: [Person]
-    id: String
-    issue: String 
-    issued: String
-    language: String 
-    page: String
-    source: String
-    title: String
-    titleShort: String 
-    type: String
-    volume: String
-}
-
-type Query {
-    articles: [Article]
-#    authors: [Person]
-}
-`;
-
-// Resolvers define the technique for fetching the types in the schema
-const resolvers = {
-    Query: {
-        articles: () => articlesDataSet.default
-    },
-};
-
+const dataSources = () => ({
+    articleDS: new ArticlesDataSource()
+})
 // Initialize the Apollo server with the schema and resolvers
-const server = new ApolloServer({typeDefs, resolvers});
+const server = new ApolloServer<ContextValue>({typeDefs, resolvers});
 
 // Start the server
 
 const {url} = await startStandaloneServer(server, {
-    listen: {port: 4000}
+    context: async ({req}) => {
+        // const {cache} = server;
+        return {
+            dataSources: {
+                articleDS: new ArticlesDataSource()
+            },
+            listen: {port: 4000}
+        }
+    }
+    // listen: {port: 4000}
 });
 
 console.log(`🚀 Server ready at ${url}`);

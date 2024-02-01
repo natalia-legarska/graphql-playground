@@ -1,4 +1,4 @@
-export interface Article {
+export interface ArticleModel {
     DOI?: string | null;
     ISSN: string;
     URL: string;
