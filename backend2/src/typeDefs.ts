@@ -6,7 +6,6 @@ export const typeDefs = gql`
     }
 
     type Article {
-        id: ID!
         bibtex: String
         creators: [Person]
         contributors: [Person]
