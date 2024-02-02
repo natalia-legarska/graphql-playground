@@ -23,6 +23,7 @@ these APIs and provides a unified GraphQL endpoint. Some operations require auth
 - npm
 - Git
 
+Note: all scripts assume you start from the project directory.
 ### Installation
 
 Clone the repository:
@@ -38,9 +39,11 @@ Install dependencies for both backend and frontend applications:
 # backend 
 > cd backend 
 > npm install  
+```
 
+```
 # frontend 
-> cd ../frontend 
+> cd frontend 
 > npm install
 ```
 
@@ -57,8 +60,8 @@ Start the backend server:
 In a new terminal window, start the frontend application:
 
 ```
-> cd ../frontend  
-> npm start
+> cd frontend  
+> npm frontend-start
 ```
 
 The frontend application will be available at [http://localhost:3000](http://localhost:3000/), and the GraphQL API can be accessed through [http://localhost:4000/graphql](http://localhost:4000/graphql).
@@ -75,7 +78,7 @@ To run tests for the backend:
 To run tests for the frontend:
 
 ```
-> cd ../frontend  
+> cd frontend  
 > npm frontend-test
 ```
 
@@ -84,5 +87,4 @@ To run tests for the frontend:
 The application supports simple authentication with hardcoded credentials. 
 
 To send requests as authenticated user, it is necessary to click `Login` button in the top right corner. To send unauthenticated requests, user can click Logout in the same place.
-
 
