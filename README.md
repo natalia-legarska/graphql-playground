@@ -1,33 +1,88 @@
 # graphql-playground
 
-## Checklist
-- [x] Create repo
-- [ ] Create backend project
-  - Create a simple back-end that stitches two public GraphQL APIs of your choice.
-  - Some of the operations must require authentication
-    - every authenticated operation must be saved in an access log that has to be exposed as a separate authenticated query.
-- [ ] Documentation how to run
-- [ ] Testing coverage
+## Overview
 
-## Task
-Unless specified otherwise choose the libraries as you see fit. 
-Provide the solution as separate projects, not a single full-stack app (this can be a monorepo if you prefer).
-High testing coverage is strongly recommended.
+This project consists of a backend and a frontend application designed to demonstrate the integration of public GraphQL API. The backend fetches the data from external GraphQL api: https://api.datacite.org/graphql. About DataCite 
+> We are a global community that shares a common interest: to ensure that research outputs and resources are openly available and connected so that their reuse can advance knowledge across and between disciplines, now and in the future.
+> https://datacite.org/
 
-We have to be able to run the projects (along with tests), so provide any necessary information in the README.
+these APIs and provides a unified GraphQL endpoint. Some operations require authentication and are logged in an access log, which is also queryable through the GraphQL API. The frontend application utilizes React and Apollo Client to display data from the backend and handles user authentication.
 
-Please implement the following using **TypeScript**:
-### Back-end
-Create a simple back-end that stitches two public GraphQL APIs of your choice.
-Some of the operations must require authentication.
+## Technology Stack
 
-Additionally, every authenticated operation must be saved in an access log that has to be exposed as a separate authenticated query.
+- **backend:** Node.js, Apollo Server, GraphQL
+- **frontend:** React, Apollo Client, MaterialUI
+- **Testing:** Jest
+- **Other Libraries:** See `package.json` files in respective directories
 
-### Front-end
-Implement a single page that will display the information from at least two separate queries defined in the back-end.
+## Getting Started
 
-One of the queries should require authentication and the app should allow logging in and out (but the credentials can be hardcoded).
+### Prerequisites
 
-**Use React and Apollo Client**.
+- Node.js (version 12 or newer)
+- npm
+- Git
 
-Styling is not a priority.
+### Installation
+
+Clone the repository:
+
+```
+git clone <repository-url>
+cd <project-directory>
+```
+
+Install dependencies for both backend and frontend applications:
+
+```
+# backend 
+> cd backend 
+> npm install  
+
+# frontend 
+> cd ../frontend 
+> npm install
+```
+
+
+### Running the Applications
+
+Start the backend server:
+
+```
+> cd backend 
+> npm backend-start
+```
+
+In a new terminal window, start the frontend application:
+
+```
+> cd ../frontend  
+> npm start
+```
+
+The frontend application will be available at [http://localhost:3000](http://localhost:3000/), and the GraphQL API can be accessed through [http://localhost:4000/graphql](http://localhost:4000/graphql).
+
+### Running Tests
+
+To run tests for the backend:
+
+```
+> cd backend 
+> npm backend-test
+```
+
+To run tests for the frontend:
+
+```
+> cd ../frontend  
+> npm frontend-test
+```
+
+## Authentication
+
+The application supports simple authentication with hardcoded credentials. 
+
+To send requests as authenticated user, it is necessary to click `Login` button in the top right corner. To send unauthenticated requests, user can click Logout in the same place.
+
+
