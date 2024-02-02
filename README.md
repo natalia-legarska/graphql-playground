@@ -88,3 +88,7 @@ The application supports simple authentication with hardcoded credentials.
 
 To send requests as authenticated user, it is necessary to click `Login` button in the top right corner. To send unauthenticated requests, user can click Logout in the same place.
 
+
+## Functionality
+
+In order to fetch data from the backend it's required to click `Fetch article` button. It triggers 2 requests to the api. If DOI identifier is given in the input field, it will return the data from the external api (assuming it's the correct DOI - example DOI: `10.1016/j.chb.2021.106722`).
