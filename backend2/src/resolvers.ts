@@ -1,3 +1,4 @@
+import {accessLogs} from "./accessLogPlugin";
 import {ArticlesService} from "./articlesService";
 
 export const resolvers = (service: ArticlesService) => ({
@@ -10,6 +11,10 @@ export const resolvers = (service: ArticlesService) => ({
                 throw new Error("Unauthorized");
             }
             return "This is protected data";
+        },
+        accessLogs: (parent, args, context) => {
+            if(!context.user) throw new Error("Unauthorized");
+            return accessLogs;
         }
     },
 });

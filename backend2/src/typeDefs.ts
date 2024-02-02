@@ -13,8 +13,15 @@ export const typeDefs = gql`
         formats: [String]
     }
 
+    type AccessLogItem {
+        timestamp: String
+        operationName: String
+        userId: String
+    }
+
     type Query {
         article(id: ID!): Article
         secretQuery: String
+        accessLogs: [AccessLogItem]
     }
 `;
