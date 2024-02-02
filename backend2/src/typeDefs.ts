@@ -15,5 +15,6 @@ export const typeDefs = gql`
 
     type Query {
         article(id: ID!): Article
+        secretQuery: String
     }
 `;

@@ -3,9 +3,27 @@ import {typeDefs} from "./typeDefs";
 import {resolvers} from "./resolvers";
 import {DataCiteService} from "./articlesService";
 
-const dataService = new DataCiteService();
-const server = new ApolloServer({ typeDefs, resolvers: resolvers(dataService) });
+interface User {
+    id: string;
+    name: string;
+}
 
-server.listen().then(({ url }) => {
+const dataService = new DataCiteService();
+const server = new ApolloServer({
+    typeDefs,
+    resolvers: resolvers(dataService),
+    context: ({req}) => {
+        const token = req.headers.authorization || "";
+
+        let user: User | null = null;
+        if (token == "hardcoded_token") {
+            user = {id: "1", name: "Test User"};
+        }
+
+        return {user};
+    }
+});
+
+server.listen().then(({url}) => {
     console.log(`🚀 Server ready at ${url}`);
 });
