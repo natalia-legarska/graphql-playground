@@ -7,7 +7,7 @@
     "backend-build": "tsc",
     "backend-watch": "tsc --watch",
     "backend-start": "node dist/index.js",
-    "backend-build-start": "npm run backend-build && npm run start",
+    "backend-build-start": "npm run backend-build && npm run backend-start",
     "backend-test": "jest"
   },
   "keywords": [],
