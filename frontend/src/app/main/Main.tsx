@@ -1,5 +1,5 @@
 import {gql, useLazyQuery} from "@apollo/client";
-import {Box, Container} from "@mui/material";
+import {Box, Container, Typography} from "@mui/material";
 import React, {useState} from "react";
 import {Article} from "./article/Article";
 import {LoadingBackdrop} from "./loading-backdrop/LoadingBackdrop";
@@ -46,12 +46,20 @@ export function Main() {
         <Container>
             <Box component="main" sx={{p: 3}}>
                 <SearchForm onFetch={handleFetchClick}/>
+                <Box sx={{p: 3}}>
+                    <header>
+                        <Typography variant="h5">Article Query</Typography>
+                    </header>
+                    <Article doi={doi} data={dataArticle} error={errorArticle}/>
+                </Box>
 
-                <header>Article Query</header>
-                <Article doi={doi} data={dataArticle} error={errorArticle}/>
+                <Box sx={{p: 3}}>
+                    <header>
+                        <Typography variant="h5">Secret Query</Typography>
+                    </header>
+                    <Secret data={dataSecret} error={errorSecret}/>
+                </Box>
 
-                <header>Secret Query</header>
-                <Secret data={dataSecret} error={errorSecret}/>
                 <LoadingBackdrop open={loadingArticle || loadingSecret} handleClose={() => {
                 }}/>
             </Box>

@@ -14,7 +14,7 @@ export const Article: React.FC<ArticleProps> = ({doi, data, error}) => {
     return (
         <>
             <Box>
-                <Typography variant="h5">{doi}</Typography>
+                <Typography variant="subtitle2">{doi}</Typography>
                 <Typography variant="body1">bibtex: {data?.article?.bibtex}</Typography>
             </Box>
         </>
