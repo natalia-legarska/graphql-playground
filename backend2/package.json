@@ -4,11 +4,11 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc --watch",
-    "start": "node dist/index.js",
-    "build-start": "npm run build && npm run start",
-    "test": "jest"
+    "backend-build": "tsc",
+    "backend-watch": "tsc --watch",
+    "backend-start": "node dist/index.js",
+    "backend-build-start": "npm run backend-build && npm run start",
+    "backend-test": "jest"
   },
   "keywords": [],
   "author": "",
