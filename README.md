@@ -51,7 +51,7 @@ Start the backend server:
 
 ```
 > cd backend 
-> npm backend-start
+> npm backend-build-start
 ```
 
 In a new terminal window, start the frontend application:
