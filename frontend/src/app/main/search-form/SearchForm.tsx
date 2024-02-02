@@ -3,21 +3,22 @@ import {DatePicker, LocalizationProvider} from "@mui/x-date-pickers";
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 import {useState} from "react";
 
-export const SearchForm = ({ onFetch }: { onFetch: (doi: string) => void }) => {
-    const [doi, setDoi] = useState('');
-
-    const handleDoiChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setDoi(event.target.value);
-    };
+export const SearchForm = ({onFetch}: { onFetch: (doi: string) => void }) => {
+    const [inputDoi, setInputDoi] = useState("");
 
     return (
         <LocalizationProvider dateAdapter={AdapterDayjs}>
             <Stack spacing={2} direction="row">
                 <DatePicker label="From"/>
                 <DatePicker label="To"/>
-                <TextField id="outlined-basic" label="DOI" variant="outlined" value={doi}
-                           onChange={handleDoiChange}/>
-                <Button variant="contained" onClick={() => onFetch(doi)}>Fetch article</Button>
+                <TextField value={inputDoi}
+                           onChange={(e) => setInputDoi(e.target.value)}
+                           label="DOI"
+                           variant="outlined" />
+                <Button onClick={() => onFetch(inputDoi)}
+                        variant="contained">
+                    Fetch article
+                </Button>
             </Stack>
         </LocalizationProvider>
     )
