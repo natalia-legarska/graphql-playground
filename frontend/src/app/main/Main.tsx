@@ -1,7 +1,6 @@
 import {Backdrop, Box, Button, CircularProgress, Container, Stack, TextField} from "@mui/material";
 import {DatePicker, LocalizationProvider} from "@mui/x-date-pickers";
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
-import {DemoContainer} from "@mui/x-date-pickers/internals/demo";
 import React from "react";
 
 export function Main() {
@@ -19,12 +18,11 @@ export function Main() {
                 <Stack spacing={2} direction="row">
 
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
-                        <DemoContainer components={['DatePicker']}>
-                            <DatePicker label="Basic date picker" />
-                        </DemoContainer>
+                        <DatePicker label="From"/>
+                        <DatePicker label="To"/>
                     </LocalizationProvider>
 
-                    <TextField id="outlined-basic" label="Outlined" variant="outlined"/>
+                    <TextField id="outlined-basic" label="DOI" variant="outlined"/>
                     <Button variant="contained">Fetch article</Button>
                 </Stack>
 
