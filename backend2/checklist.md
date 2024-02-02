@@ -5,10 +5,10 @@
 - [x] implement GraphQL server
 	- [x] create schema
 	- [x] create resolvers
-	- [ ] implement auth for some of the operations
+	- [x] implement auth for some of the operations
 	- [ ] write tests
 - [ ] implement access logging
-	- [ ] design access log structure
-	- [ ] implement logging mechanism
+	- [x] design access log structure
+	- [x] implement logging mechanism
 	- [ ] expose access log through GraphQl - protected by auth
 	- [ ] test the access logging

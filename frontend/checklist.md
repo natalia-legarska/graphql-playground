@@ -1,7 +1,7 @@
 - [x] Crete frontend project
 - [x] Use React 
-- [ ] Use Apollo Client
-- [ ] on main page display information from a query from backend
+- [x] Use Apollo Client
+- [x] on main page display information from a query from backend
 - [x] Documentation how to run
 - [ ] Testing coverage
 
